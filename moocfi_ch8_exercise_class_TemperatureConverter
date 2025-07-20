@@ -1,0 +1,66 @@
+class TemperatureConverter:
+    # Start by defining your __init__ method
+    # Then add your conversion methods
+    def __init__(self, from_scale, to_scale, input_temp):
+        self.from_scale = from_scale.strip().upper() # user entered FROM scale, can be C, F, K
+        self.to_scale = to_scale.strip().upper() # user entered TO scale, can be C, F, K
+        self.input_temp = input_temp # user entered temperature in numeric
+        self.scale_validation() #validate before conversion
+        self.temp_validation() #validate the temp to ensure above 0
+        self.output_temp = self.convert() # generate the output temp after calling the convert method
+
+    def to_celsius(self):
+        if self.from_scale == 'K':
+            return self.input_temp - 273.15
+        elif self.from_scale == 'F':
+            return (self.input_temp - 32) * (5/9)
+        else:
+            return self.input_temp
+
+		    
+    def to_fahrenheit(self):
+        if self.from_scale == 'K':
+	        return (self.input_temp - 273.15) * (9/5) + 32
+        elif self.from_scale == 'C':
+            return (self.input_temp * (9/5)) + 32
+        else: 
+            return self.input_temp
+
+
+    def to_kelvin(self):
+        if self.from_scale == 'C':
+            self.input_temp + 273.15
+        elif self.from_scale == 'F':
+            (self.input_temp-32)*5/9+273.15
+        else: 
+            return self.input_temp
+
+
+    def scale_validation(self):# only accept C, F, K
+        if self.from_scale not in ['C', 'F', 'K']:
+            raise ValueError(f"Invalid from_scale '{self.from_scale}'. Must be one of C, F, K.")
+        
+        if self.to_scale not in ['C', 'F', 'K']:
+            raise ValueError(f"Invalid to_scale '{self.to_scale}'. Must be one of C, F, K.")
+
+
+    def temp_validation(self): # ensure both the input and output temps are 
+	  # not less than zero at the corresponding scale
+        if self.from_scale == 'K' and self.input_temp < 0: # Kelvin temp is less than 0
+            raise ValueError(f"Kelvin temperature cannot be negative")
+
+
+    def convert(self):
+        if self.to_scale == 'C':
+            return self.to_celsius()
+        elif self.to_scale == 'F':
+            return self.to_fahrenheit()
+        else:
+            return self.to_kelvin()
+
+try:
+    temp = TemperatureConverter('C', 'f', 18)
+    print(f"You wanted to convert from {temp.input_temp:.2f}°{temp.from_scale} to {temp.to_scale}, and your result is {temp.output_temp:.2f}°{temp.to_scale}")
+except ValueError as e:
+    print(f"Error: {e}")
+    
