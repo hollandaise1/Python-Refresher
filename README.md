@@ -78,6 +78,7 @@ Let's say you have a list as `userAge = [21, 22, 23, 24, 25]`.
 - Addition operator `+`: concatenate the list but the original list won't change
 - Multiplication Operator `*` Duplicate a list and concatenate it to the end of the list
 
+###### About Remove Related Operators:
 - Remove items, we do `del userAge[2]`: removes the 3rd item from the list
   
 - `pop()`: Get the value of an item and remove it from the list. Requires index of item as the argument. The original list will be modified and no need to assign a new list.
@@ -99,20 +100,21 @@ print(userAge.pop(2)) => [23]
 print(userAge) = > [21, 22, 24, 25]`
 
 - `remove()`: Remove an item from a list. Requires the value of the item as the argument. i.e.`myList.remove('c') => ['a','b','d','e']`
-
+  
+###### About Sorting Related Operators:
 - `sort()`: sort a list alphabetically or numerically
 - `sorted()`: returns a new sorted list wihout sorting the original list. Requires a list as the aurgument.
 
 ###### Note the difference: 
-`myList = [3, 0, -1, 4, 6]`
-`print(myList)  => [3, 0, -1, 4, 6]`
-`print(myList.sort())  => None` will return none
-`print(myList)  => [-1, 0, 3, 4, 6]` The original list is sorted
+- `myList = [3, 0, -1, 4, 6]`
+- `print(myList)  => [3, 0, -1, 4, 6]`
+- `print(myList.sort())  => None` will return none
+- `print(myList)  => [-1, 0, 3, 4, 6]` The original list is sorted
 
-`print(sorted(myList)) => [-1, 0, 3, 4, 6]` will return a sorted list
-`new_list = sorted(myList)`
-`print(new_list) => [-1, 0, 3, 4, 6]` the new list will be sorted
-`print(myList) => [3, 0, -1, 4, 6]` the original list is not sorted
+- `print(sorted(myList)) => [-1, 0, 3, 4, 6]` will return a sorted list
+- `new_list = sorted(myList)`
+- `print(new_list) => [-1, 0, 3, 4, 6]` the new list will be sorted
+- `print(myList) => [3, 0, -1, 4, 6]` the original list is not sorted
 
 ### Set
 - a `set` is like a deduplicated list. A non-empty `set` can be represented using `{}`, however, if you declare a set, you cannot use `{}`, b/c Python will treat it as a dictionary. A set is unordered, unindexed, and optimized for fast membership checking.
@@ -161,10 +163,58 @@ To declare, it will be `tupleName = (initial values)`. Use parentheses() and sep
 
 ## Condition Statements
 ### If Statements
+- Indentation, indentation, indentation
 ### Inline if
+- `Do Task A if condition is True else do Task B`
 ### For loop
+- Noting more to say, but just if you'd like to display the index of the members in the list. We can do `enumerate()` function.
+- `pets = ['cats', 'dogs', 'rabbits', 'hamsters']
+for i, v in enumerate(pets):
+  print(i, v)`
+  
+Alternatively, this will be:
+-`for i in range(len(fruits)):
+    print(i, fruits[i])`
+
+- Loop through a dictionary
+- `userNameAndAge = dict(Peter= 38, John = 51, Alex = 13, Alvin = "Not Available")`
+
+- `for i in userNameAndAge:
+  print("Name = %s, Age = %s" %(i, userNameAge[i]))`
+
+`=> Name = Peter, Age = 38
+Name = John, Age = 51
+Name = Alex, Age = 13
+Name = Alvin, Age = Not Available`
+
+- `range(5) => list[0,1,2,3,4]`
+- `range(3,10) => list[3,4,5,6,7,8,9]`
+- `range(4,10,2) => list[4,6,8]`
+
 ### While Loop
+`counter = 5
+while counter > 0:
+  print("Counter =", counter)
+  counter -= 1`
+  
+`=> 
+Counter = 5
+Counter = 4
+Counter = 3
+Counter = 2
+Counter = 1`
+
 ### Break
+`counter = 5
+while counter > 0:
+  print("Counter =", counter)
+  counter -= 1
+  if counter == 3:
+    break`
+  
+`=> 
+Counter = 5
+Counter = 4`
 ### Continue
 ### Try, Except
 
