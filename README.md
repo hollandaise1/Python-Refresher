@@ -169,18 +169,18 @@ To declare, it will be `tupleName = (initial values)`. Use parentheses() and sep
 ### For loop
 - Noting more to say, but just if you'd like to display the index of the members in the list. We can do `enumerate()` function.
 - `pets = ['cats', 'dogs', 'rabbits', 'hamsters']
-for i, v in enumerate(pets):
-  print(i, v)`
+- for i, v in enumerate(pets):
+- print(i, v)`
   
-Alternatively, this will be:
+- Alternatively, this will be:
 -`for i in range(len(fruits)):
-    print(i, fruits[i])`
+-  print(i, fruits[i])`
 
 - Loop through a dictionary
 - `userNameAndAge = dict(Peter= 38, John = 51, Alex = 13, Alvin = "Not Available")`
 
 - `for i in userNameAndAge:
-  print("Name = %s, Age = %s" %(i, userNameAge[i]))`
+-  print("Name = %s, Age = %s" %(i, userNameAge[i]))`
 
 `=> Name = Peter, Age = 38
 Name = John, Age = 51
@@ -215,7 +215,9 @@ while counter > 0:
 `=> 
 Counter = 5
 Counter = 4`
+
 ### Continue
+
 ### Try, Except
 
 ## Functions and Modules
