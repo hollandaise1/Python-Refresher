@@ -39,7 +39,7 @@ Can be either using single or double quotes. Use `(+)` sign for concatenation.
 
 - `.upper()`,`.lower()`
 
-### Formatting Strings and Digits
+#### Formatting Strings and Digits
 - % can be used as formatter in string, for example:
 `brand = 'Apple'
 exchangeRate = 1.235235245
@@ -52,7 +52,7 @@ print(message)
 => The price of this Apple laptop is 1299 USD and the exchange rate is 1.24 USD to 1 EUR`
 The `0,1,2` from `{0:s}, {1:d}, {2:4.2f}` are referring to the positions of this argument `('Apple', 1299, 1.235235245)`.
 
-### Type Casting Strings and Digits
+#### Type Casting Strings and Digits
 `int()`, `float()`, `str()`
 
 ### List
@@ -116,6 +116,7 @@ print(userAge) = > [21, 22, 24, 25]`
 
 ### Set
 - a `set` is like a deduplicated list. A non-empty `set` can be represented using `{}`, however, if you declare a set, you cannot use `{}`, b/c Python will treat it as a dictionary. A set is unordered, unindexed, and optimized for fast membership checking.
+
 - Only hashable data types can go to a `set`: `int`, `float`, `str`, `bool`, `tuple` (only if all its elements are hashable), `frozenset` (an immutable version of set); Cannot go to a `set`: `list`, `set`, `dic`
 - When to use a `set`:
 - Remove duplicates: `names = ["Alice", "Bob", "Alice", "Eve"], unique_names = set(names)`  # ➜ {'Alice', 'Bob', 'Eve'}
@@ -130,7 +131,7 @@ print(userAge) = > [21, 22, 24, 25]`
 `print(a - b)`  Difference: `{1, 2}`
 
 ### Tuple
-Similar to lists, but cannot modify their values. The initial values are the values that will stay for the rest of the program. 
+- Similar to lists, but cannot modify their values. The initial values are the values that will stay for the rest of the program. 
 To declare, it will be `tupleName = (initial values)`. Use parentheses() and separated by a comma. i.e. `monthsOfYear = ("Jan" ,"Feb", ...)`
 
 - `del`: you can say `del myTuple`, this will delete the tuple completely. Cannot modify an item from a tuple. Usually will convert it to a List and then convert back, such as:
@@ -144,7 +145,19 @@ To declare, it will be `tupleName = (initial values)`. Use parentheses() and sep
 - Addition and Multiplication Operators: same as Lists
 
 ### Dictionary
-
+- A collection of related data pairs. Dictionary keys and data can be of different data types.
+- How to declare a dictionary: `userNameAndAge = dict(Peter= 38, John = 51, Alex = 13, Alvin = "Not Available")` If using dict() method, no need to have quotes for dictionary keys.
+- Add an item: `userNameAndAge["Joe"]=40`
+- Remove an item: `del userNameAndAge["Joe"]=40`
+- `clear()`: Removes all elements of the dictionary, returning an empty dictionary. `dict1.clear(), print(dict1)` => `{}`
+- `del`: Deletes the entire dictionary. `del dict1, print(dict1)` => `NameError: name 'dict1' is not defined.`
+- `items()`: Returns list of the dictionary's pairs as tuples
+- `keys()`: Returns list of the dictionary's keys
+- `values()`: Returns list of the dictionary's values
+- `get()`: Returns the value of a given key. `dic1 = {1: 'one', 2: 'two'}`, `dic1.get(1)` => `one`; `dic1.get(5, "Not Found")` => `Not Found` Return a user-defined value if the key is not found. 
+- `update()`: Adds one dictionary's key-values pairs to another. Duplicates are removed. `dic1 = {1: 'one', 2: 'two'}, dic2 = {1: 'one', 3: 'three'}`, `dic1.update(dic2) => print(dic1) => {1: 'one', 2: 'two', 3: 'three'} and print(dic2) => {1: 'one', 3: 'three'}` no change.
+- `in`: Checks if an item is in a dictionary. Based on the key: `1 in dic1` => `True`; Based on the values: `'one' in the dic1.values()` => `True`
+- `len()`: Returns the number of items (pairs) of a dictionary
 
 ## Condition Statements
 ### If Statements
