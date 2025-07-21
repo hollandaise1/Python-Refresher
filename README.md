@@ -224,30 +224,6 @@ Counter = 4`
 
 ## Working with Files
 
-## OOP
-### Class
-Definition: A class is a template or blueprint that defines how variables (attributes) and functions (methods) are named and used within its objects.
-
-What are the benefits of using a class? (ERS)
-| Benefit          | Why It’s Useful                               |
-| ---------------- | --------------------------------------------- |
-| 1. Encapsulation | Keeps related logic and data together         |
-| 2. Reusability   | Allows shared behavior with less code         |
-| 3. Statefulness  | Objects can store memory and evolve over time |
-
-When to use a class and when to use a function?
-1/Functions = great for stateless tools, scripts, transformations (data transformation/pipelines)
-2/Classes = great for stateful models (hint:self), reusable components, large systems (Game design, UI design)
-
-What is a Constructor? Why do we need a Constructor? How a Constructor 
-
-## More OOP
-### Special Methods
-### Python Built-in Functions for Objects
-
-## Math and Binary
-
-
 ## Misc. Notes:
 ### What are the different styles of naming a object?
 | Style          | Example          | Usage                                                        |
