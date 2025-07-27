@@ -28,26 +28,15 @@ class BankAccount:
   def add_interest(self):
     self.balance += self.balance * self.annual_interest
 ```
-
 - Objects in data structures: own objects can be stored into a list
 - Items stored as referneces: the items stored in a data structure are actually references to items
 - Objects as parameters: variable *self* can be used to references the object itself
 - Objects as attributes: objects can be stored inside other objects
 - None: keyword *None* denotes an empty reference
   
-- Getters & Setters: special methods that allow the client to access the hidden attributes
-- Getters:`@property` Getter should be defined before the (possible) setter method.
-- Setters: `@variable_name.setter`
+- Getters & Setters: special methods that allow the client to access the hidden attributes. Getters: `@property` Getter should be defined before the (possible) setter method. Setters: `@variable_name.setter`
 
 - Visibility: double underscores before a method name that hides the method from the client
-
-- Static members:
-- Class members are called static members, including class variables and class methods.
-- *Class Variable*:
-- Class variable is defined inside the class definition (but outside methods).
-- Variable can be used without instantiating an object out of the class.
-- *Class Methods*:
-- Class method is defined with *cls* as the first parameter. It also annotated as @classmethod and called as `ClassName.class_method(parameters)`
 
 - What is self:
 - A CLASS variable (类变量) belongs to the class and is shared by all instances of the class. It is defined outside any method in the class.
@@ -94,11 +83,7 @@ There is also `@staticmethod`, which does NOT take `self` or `cls` as the first 
 | `total_people = 0` *(used with `@classmethod`)*               | Count how many `Person` objects have been created |
 | `default_study_hours = 10`                                    | A default value used by all unless overridden     |
 
-To reiterate:
-OOP is a programming paradigm that organizes code around objects — real-world or conceptual "things" that:
-- Have attributes/state (variables)
-- Can perform actions (methods)
-- Belong to a blueprint (class)
+To reiterate: OOP is a programming paradigm that organizes code around objects — real-world or conceptual "things" that: Have attributes/state (variables). Can perform actions (methods). Belong to a blueprint (class).
 
 Characteristics:
 | Principle         | Meaning                                                                       |
@@ -127,7 +112,6 @@ With abstraction & polymorphism,
 | --------------------------------------------------------- | -------------- |
 | Hide *how* it's done                                      | ✅ Abstraction  |
 | Let objects respond in different ways to the same message | ✅ Polymorphism |
-
 
 - 
 
