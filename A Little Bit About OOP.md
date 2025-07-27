@@ -82,6 +82,7 @@ This is a class method, because of the `@classmethod` decorator. It takes cls as
 There is also `@staticmethod`, which does NOT take `self` or `cls` as the first parameter; Belongs to the `class`, but it doesn’t access or modify class or instance data. Simply a function logically grouped inside the `class`, for organizational clarity.
 
 <img width="678" height="425" alt="image" src="https://github.com/user-attachments/assets/1829d97b-18a1-401c-a86e-066de0f177bc" />
+
 - Class: `Person`
 - Instance variables (per object): `name`, `sex`, `profession`
 - Instance methods: `work()`, `study()`
