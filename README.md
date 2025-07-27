@@ -116,7 +116,7 @@ print(userAge) = > [21, 22, 24, 25]`
 - `print(new_list) => [-1, 0, 3, 4, 6]` the new list will be sorted
 - `print(myList) => [3, 0, -1, 4, 6]` the original list is not sorted
 
-### Set
+### Set 集合
 - a `set` is like a deduplicated list. A non-empty `set` can be represented using `{}`, however, if you declare a set, you cannot use `{}`, b/c Python will treat it as a dictionary. A set is unordered, unindexed, and optimized for fast membership checking.
 
 - Only hashable data types can go to a `set`: `int`, `float`, `str`, `bool`, `tuple` (only if all its elements are hashable), `frozenset` (an immutable version of set); Cannot go to a `set`: `list`, `set`, `dic`
@@ -132,8 +132,8 @@ print(userAge) = > [21, 22, 24, 25]`
 `print(a & b)`  Intersection: `{3}`
 `print(a - b)`  Difference: `{1, 2}`
 
-### Tuple
-- Similar to lists, but cannot modify their values. The initial values are the values that will stay for the rest of the program. 
+### Tuple 元组
+- Similar to lists, but cannot modify their values. The insertion order is preserved, but not sorted. The initial values are the values that will stay for the rest of the program. 
 To declare, it will be `tupleName = (initial values)`. Use parentheses() and separated by a comma. i.e. `monthsOfYear = ("Jan" ,"Feb", ...)`
 
 - `del`: you can say `del myTuple`, this will delete the tuple completely. Cannot modify an item from a tuple. Usually will convert it to a List and then convert back, such as:
@@ -145,6 +145,40 @@ To declare, it will be `tupleName = (initial values)`. Use parentheses() and sep
 - `in`: check if an item is in a tuple. `myTuple = ('a', 'c'), 'c' in myTuple => True`
 - `len()`
 - Addition and Multiplication Operators: same as Lists
+| Scenario                                         | Why `tuple` is best                            |
+| ------------------------------------------------ | ---------------------------------------------- |
+| ✅ You want an **ordered, fixed-size collection** | `tuple` preserves insertion order              |
+| ✅ You need **indexing** or **slicing**           | You can do `t[0]`, `t[1:3]`, etc.              |
+| ✅ You need **immutable** data                    | Tuples cannot be changed — safe for constants  |
+| ✅ You want to use it as a **dictionary key**     | Only immutable types (like tuples) can be keys |
+
+| Feature             | `set`                                       | `tuple`                                     |
+| ------------------- | ------------------------------------------- | ------------------------------------------- |
+| Ordered?            | ❌ (insertion order in 3.7+)                 | ✅ Yes                                       |
+| Duplicate elements? | ❌ No                                        | ✅ Yes                                       |
+| Mutable?*           | ✅ Yes                                       | ❌ No                                        |
+| Indexable?          | ❌ No                                        | ✅ Yes                                       |
+| De-duplicates?      | ✅ Yes                                       | ❌ No                                        |
+| Use as dict key?    | ❌ No                                        | ✅ Yes (if contents are immutable)           |
+| Typical use case    | Membership tests, unique elements, set math | Coordinates, key-value pairs, fixed records |
+
+*: Mutable
+When a data type is immutable, it means we cannot directly change its elements or values in place. But we can still slice or copy parts of it, which creates a new object
+| Type   | Example of mutation        |
+| ------ | -------------------------- |
+| `list` | `my_list[0] = 100`         |
+| `set`  | `my_set.add("new")`        |
+| `dict` | `my_dict["key"] = "value"` |
+
+
+| **Type** | ❌ Illegal Mutation                 | ✅ Correct Way to "Change"                                  |
+| -------- | ---------------------------------- | ---------------------------------------------------------- |
+| `tuple`  | `my_tuple[0] = 10` → ❌ `TypeError` | Create a **new tuple**: `new_tuple = (10,) + my_tuple[1:]` |
+| `str`    | `"hello"[0] = "H"` → ❌ `TypeError` | Create a **new string**: `'H' + "hello"[1:]` → `"Hello"`   |
+| `int`    | `x += 1` creates new object        | Just assign the result: `x = x + 1` or `x += 1`            |
+| `float`  | `f *= 2` creates new object        | `f = f * 2` or `f *= 2`                                    |
+| `bool`   | `flag = not flag`                  | Just reassign: `flag = not flag`                           |
+
 
 ### Dictionary
 - A collection of related data pairs. Dictionary keys and data can be of different data types.
