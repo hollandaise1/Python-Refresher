@@ -106,7 +106,9 @@ elif type(animal) == Cat:
     animal.meow()
 ```
 With abstraction & polymorphism,
-```python animal.make_sound()  # Much cleaner and extendable ```
+```python 
+animal.make_sound()  # Much cleaner and extendable
+```
 
 | Goal                                                      | What you use   |
 | --------------------------------------------------------- | -------------- |
